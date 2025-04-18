@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - Sunset Hotel | Luxury Coastal Resort</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Create an account at Sunset Hotel to book your luxury stay. Enjoy exclusive offers and seamless booking."
+    />
+    <meta
+      name="keywords"
+      content="hotel registration, sunset hotel sign up, luxury hotel account, coastal resort registration"
+    />
+    <meta name="author" content="Sunset Hotel" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="Register - Sunset Hotel | Luxury Coastal Resort"
+    />
+    <meta
+      property="og:description"
+      content="Create an account at Sunset Hotel to book your luxury stay. Enjoy exclusive offers and seamless booking."
+    />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+    />
+    <meta property="og:url" content="http://127.0.0.1/register.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Register - Sunset Hotel | Luxury Coastal Resort"
+    />
+    <meta
+      name="twitter:description"
+      content="Create an account at Sunset Hotel to book your luxury stay. Enjoy exclusive offers and seamless booking."
+    />
+    <meta
+      name="twitter:image"
+      content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Inline CSS for Register Page -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+        overflow-x: hidden;
+      }
+
+      .register-container {
+        display: flex;
+        max-width: 900px;
+        width: 90%;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      .register-image {
+        flex: 1;
+        background: url("https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")
+          no-repeat center;
+        background-size: cover;
+        min-height: 500px;
+      }
+
+      .register-form {
+        flex: 1;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .register-form h1 {
+        font-size: 2rem;
+        color: #1e3c72;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .input-box {
+        position: relative;
+        margin-bottom: 25px;
+      }
+
+      .input-box input,
+      .input-box select {
+        width: 100%;
+        padding: 12px 15px;
+        font-size: 1rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        outline: none;
+        transition: border-color 0.3s, box-shadow 0.3s;
+        background: #f9f9f9;
+      }
+
+      .input-box input:focus,
+      .input-box select:focus {
+        border-color: #2a5298;
+        box-shadow: 0 0 8px rgba(42, 82, 152, 0.2);
+      }
+
+      .input-box label {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        font-size: 1rem;
+        color: #666;
+        pointer-events: none;
+        transition: all 0.3s ease;
+      }
+
+      .input-box input:focus ~ label,
+      .input-box input:not(:placeholder-shown) ~ label {
+        top: -10px;
+        left: 10px;
+        font-size: 0.8rem;
+        color: #2a5298;
+        background: #fff;
+        padding: 0 5px;
+      }
+
+      .error-message {
+        color: #e74c3c;
+        font-size: 0.9rem;
+        margin-top: 5px;
+        display: none;
+      }
+
+      .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 12px;
+        font-size: 1.1rem;
+        color: #fff;
+        background: linear-gradient(90deg, #2a5298, #1e3c72);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+      }
+
+      .btn:hover {
+        background: linear-gradient(90deg, #1e3c72, #2a5298);
+        transform: translateY(-2px);
+      }
+
+      .btn:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+      }
+
+      .spinner {
+        margin-left: 10px;
+      }
+
+      .login-link {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 0.95rem;
+        color: #666;
+      }
+
+      .login-link a {
+        color: #2a5298;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .login-link a:hover {
+        text-decoration: underline;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .register-container {
+          flex-direction: column;
+        }
+
+        .register-image {
+          min-height: 200px;
+        }
+
+        .register-form {
+          padding: 20px;
+        }
+
+        .register-form h1 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="register-container">
+      <!-- Image Section -->
+      <div
+        class="register-image"
+        role="img"
+        aria-label="Luxury hotel room with ocean view"
+      ></div>
+
+      <!-- Registration Form -->
+      <div class="register-form">
+        <h1>Join Sunset Hotel</h1>
+        <form id="registerForm" role="form" aria-labelledby="register-heading">
+          <div class="input-box">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder=" "
+              required
+              aria-required="true"
+            />
+            <label for="name">Full Name</label>
+          </div>
+          <div class="input-box">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder=" "
+              required
+              aria-required="true"
+            />
+            <label for="email">Email Address</label>
+          </div>
+          <div class="input-box">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder=" "
+              required
+              aria-required="true"
+              minlength="6"
+            />
+            <label for="password">Password</label>
+          </div>
+          <div id="errorMessage" class="error-message"></div>
+          <button type="submit" class="btn" aria-label="Create your account">
+            <span id="submitBtnText">Register</span>
+            <div
+              id="submitSpinner"
+              class="spinner"
+              style="display: none"
+              aria-hidden="true"
+            >
+              <i class="fas fa-spinner fa-spin"></i>
+            </div>
+          </button>
+        </form>
+        <div class="login-link">
+          Already have an account? <a href="login.html">Login here</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Firebase Configuration -->
+    <script type="module">
+      import { firebaseConfig } from "./js/firebase-config.js";
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+      import { saveUserData } from "./js/database.js";
+
+      console.log("Register script started. Firebase config:", firebaseConfig);
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      // Handle form submission
+      document
+        .getElementById("registerForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          console.log("Register form submitted");
+
+          const submitBtn = e.target.querySelector(".btn");
+          const submitBtnText = document.getElementById("submitBtnText");
+          const submitSpinner = document.getElementById("submitSpinner");
+          const errorMessage = document.getElementById("errorMessage");
+
+          // Show loading state
+          submitBtn.disabled = true;
+          submitBtnText.style.display = "none";
+          submitSpinner.style.display = "inline-block";
+          errorMessage.style.display = "none";
+
+          try {
+            const name = document.getElementById("name").value.trim();
+            const email = document
+              .getElementById("email")
+              .value.trim()
+              .toLowerCase();
+            const password = document.getElementById("password").value;
+
+            if (password.length < 6) {
+              throw new Error("Password must be at least 6 characters long");
+            }
+
+            console.log("Creating user with email:", email);
+            const userCredential = await createUserWithEmailAndPassword(
+              auth,
+              email,
+              password
+            );
+            const user = userCredential.user;
+            console.log("User created:", user.uid);
+
+            // Save user data to Realtime Database
+            await saveUserData(user.uid, name, email);
+            console.log("User data saved successfully");
+
+            // Store user info in localStorage
+            localStorage.setItem("token", user.accessToken);
+            localStorage.setItem("userEmail", email);
+            localStorage.setItem("userName", name);
+
+            alert("Registration successful! Welcome to Sunset Hotel.");
+            window.location.href = "index.html";
+          } catch (error) {
+            console.error("Registration error:", error.message, error.stack);
+            errorMessage.textContent = error.message;
+            errorMessage.style.display = "block";
+          } finally {
+            // Reset button state
+            submitBtn.disabled = false;
+            submitBtnText.style.display = "inline-block";
+            submitSpinner.style.display = "none";
+          }
+        });
+    </script>
+  </body>
+</html>
