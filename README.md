@@ -36,7 +36,7 @@ npm install
 3. Create a `.env` file in the root directory with the following variables:
 ```
 PORT=3000
-EMAIL_USER=your-sowdasheikh01@gmail.com
+EMAIL_USER=your-kipngenoemmanuel479@gmail.com
 EMAIL_PASS=your-app-specific-Toto123@
 STRIPE_SECRET_KEY=you-stripe-secret-key
 FIREBASE_API_KEY=your-firebase-api-key
