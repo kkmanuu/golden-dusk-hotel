@@ -1,4 +1,4 @@
-# Sunset Hotel Website
+# golden-dusk-hotel
 
 A modern hotel booking website with real-time features, payment integration, and admin dashboard.
 
@@ -24,7 +24,7 @@ A modern hotel booking website with real-time features, payment integration, and
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/sunset-hotel.git
+git clone https://github.com/yourusername/golden-dusk-hotel.git
 cd sunset-hotel
 ```
 
