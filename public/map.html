@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location - Sunset Hotel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .map-container {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .location-info {
+            margin-bottom: 15px;
+        }
+
+        .location-info h2 {
+            color: #e67e22;
+            margin-bottom: 10px;
+        }
+
+        .location-info p {
+            margin: 5px 0;
+            color: #333;
+        }
+
+        .directions-btn {
+            background: #e67e22;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .directions-btn:hover {
+            background: #d35400;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .auth-btn {
+            background: #2c3e50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .auth-btn:hover {
+            background: #34495e;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="map-container">
+        <div class="map-overlay">
+            <div class="location-info">
+                <h2>Sunset Hotel</h2>
+                <p>📍 123 Ocean View Drive</p>
+                <p>🏙️ Mombasa, Kenya</p>
+                <p>📞 +254 114015046</p>
+                <p>📧 info@sunset-hotel.com</p>
+            </div>
+            <button class="directions-btn" onclick="getDirections()">Get Directions</button>
+            <div class="auth-buttons">
+                <a href="/signin" class="auth-btn">Sign In</a>
+                <a href="/signup" class="auth-btn">Sign Up</a>
+            </div>
+        </div>
+        <div id="map"></div>
+    </div>
+
+    <script>
+        // Initialize and add the map
+        function initMap() {
+            // The location of Sunset Hotel
+            const hotelLocation = { lat: -4.0435, lng: 39.6682 }; // Mombasa coordinates
+            // The map, centered at Sunset Hotel
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: hotelLocation,
+                styles: [
+                    {
+                        "featureType": "poi",
+                        "elementType": "labels",
+                        "stylers": [
+                            {
+                                "visibility": "off"
+                            }
+                        ]
+                    }
+                ]
+            });
+            // The marker, positioned at Sunset Hotel
+            const marker = new google.maps.Marker({
+                position: hotelLocation,
+                map: map,
+                title: "Sunset Hotel",
+                animation: google.maps.Animation.DROP
+            });
+
+            // Info window for the marker
+            const infoWindow = new google.maps.InfoWindow({
+                content: `
+                    <div style="padding: 10px;">
+                        <h3 style="margin: 0 0 5px 0; color: #e67e22;">Sunset Hotel</h3>
+                        <p style="margin: 0;">123 Ocean View Drive</p>
+                        <p style="margin: 0;">Mombasa, Kenya</p>
+                    </div>
+                `
+            });
+
+            marker.addListener("click", () => {
+                infoWindow.open(map, marker);
+            });
+        }
+
+        // Function to get directions
+        function getDirections() {
+            const destination = "Sunset Hotel, Mombasa";
+            const url = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destination)}`;
+            window.open(url, '_blank');
+        }
+
+        // Load Google Maps API
+        function loadGoogleMaps() {
+            const script = document.createElement('script');
+            script.src = `https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap`;
+            script.defer = true;
+            script.async = true;
+            document.head.appendChild(script);
+        }
+
+        // Load the map when the page loads
+        window.onload = loadGoogleMaps;
+    </script>
+</body>
+
+</html>
