@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - Sunset Hotel</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="View hotel reports, analytics, and booking statistics for Sunset Hotel management.">
+    <meta name="keywords" content="hotel reports, booking analytics, hotel management, occupancy rates">
+    <meta name="author" content="Sunset Hotel">
+    <meta name="robots" content="index, follow">
+
+    <!-- CSS and Font Links -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Chart.js for Analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html" aria-label="Return to homepage">Home</a></li>
+            <li><a href="#" id="logoutBtn" aria-label="Logout from your account">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="reports-container">
+        <h2>Hotel Reports & Analytics</h2>
+
+        <!-- Summary Cards -->
+        <div class="summary-cards">
+            <div class="card">
+                <i class="fas fa-users"></i>
+                <div class="card-content">
+                    <h3>Total Users</h3>
+                    <p id="totalUsers">Loading...</p>
+                </div>
+            </div>
+            <div class="card">
+                <i class="fas fa-calendar-check"></i>
+                <div class="card-content">
+                    <h3>Total Bookings</h3>
+                    <p id="totalBookings">Loading...</p>
+                </div>
+            </div>
+            <div class="card">
+                <i class="fas fa-money-bill-wave"></i>
+                <div class="card-content">
+                    <h3>Total Revenue</h3>
+                    <p id="totalRevenue">Loading...</p>
+                </div>
+            </div>
+            <div class="card">
+                <i class="fas fa-star"></i>
+                <div class="card-content">
+                    <h3>Average Rating</h3>
+                    <p id="averageRating">Loading...</p>
+                </div>
+            </div>
+            <div class="card">
+                <i class="fas fa-bed"></i>
+                <div class="card-content">
+                    <h3>Occupancy Rate</h3>
+                    <p id="occupancyRate">Loading...</p>
+                </div>
+            </div>
+            <div class="card">
+                <i class="fas fa-clock"></i>
+                <div class="card-content">
+                    <h3>Average Stay</h3>
+                    <p id="averageStay">Loading...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Date Range Filter -->
+        <div class="filter-section">
+            <h3>Filter Reports</h3>
+            <div class="date-range">
+                <div class="input-box">
+                    <label for="startDate">Start Date</label>
+                    <input type="date" id="startDate">
+                </div>
+                <div class="input-box">
+                    <label for="endDate">End Date</label>
+                    <input type="date" id="endDate">
+                </div>
+                <button class="btn" onclick="applyDateFilter()">Apply Filter</button>
+            </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="charts-container">
+            <div class="chart-card">
+                <h3>Bookings by Month</h3>
+                <canvas id="bookingsChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>Room Type Distribution</h3>
+                <canvas id="roomsChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>Revenue Trend</h3>
+                <canvas id="revenueChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>Customer Satisfaction</h3>
+                <canvas id="satisfactionChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Detailed Tables -->
+        <div class="tables-container">
+            <div class="table-card">
+                <h3>Recent Bookings</h3>
+                <div class="table-actions">
+                    <button class="btn" onclick="exportToCSV('recentBookings')">Export CSV</button>
+                    <button class="btn" onclick="printTable('recentBookings')">Print</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Guest Name</th>
+                            <th>Room Type</th>
+                            <th>Check-in</th>
+                            <th>Check-out</th>
+                            <th>Status</th>
+                            <th>Amount</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recentBookings">
+                        <tr>
+                            <td colspan="7">Loading...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-card">
+                <h3>User Statistics</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User Type</th>
+                            <th>Count</th>
+                            <th>Percentage</th>
+                            <th>Growth</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userStats">
+                        <tr>
+                            <td colspan="4">Loading...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase Configuration -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+        import { getFirestore, collection, query, where, getDocs, orderBy, limit } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDuetoY-aEmpJ3k534sCrrkYZohlnbdQp8",
+            authDomain: "sunset-hotel-3813d.firebaseapp.com",
+            projectId: "sunset-hotel-3813d",
+            storageBucket: "sunset-hotel-3813d.firebasestorage.app",
+            messagingSenderId: "747778179093",
+            appId: "1:747778179093:web:ccf977e650c2b0be298e1c"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // Check authentication state
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                window.location.href = 'login.html';
+                return;
+            }
+            loadReports();
+        });
+
+        // Logout functionality
+        document.getElementById('logoutBtn').addEventListener('click', async (e) => {
+            e.preventDefault();
+            try {
+                await signOut(auth);
+                window.location.href = 'login.html';
+            } catch (error) {
+                console.error('Error signing out:', error);
+            }
+        });
+
+        // Initialize charts
+        const bookingsChart = new Chart(document.getElementById('bookingsChart'), {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Bookings',
+                    data: [],
+                    borderColor: '#ff6b6b',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        const roomsChart = new Chart(document.getElementById('roomsChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Standard', 'Deluxe', 'Suite', 'Presidential'],
+                datasets: [{
+                    data: [],
+                    backgroundColor: ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        const revenueChart = new Chart(document.getElementById('revenueChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Revenue (KSH)',
+                    data: [],
+                    backgroundColor: '#4ecdc4'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        const satisfactionChart = new Chart(document.getElementById('satisfactionChart'), {
+            type: 'radar',
+            data: {
+                labels: ['Cleanliness', 'Service', 'Amenities', 'Value', 'Location'],
+                datasets: [{
+                    label: 'Customer Satisfaction',
+                    data: [],
+                    backgroundColor: 'rgba(255, 107, 107, 0.2)',
+                    borderColor: '#ff6b6b',
+                    pointBackgroundColor: '#ff6b6b'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        beginAtZero: true,
+                        max: 5
+                    }
+                }
+            }
+        });
+
+        // Fetch and display data
+        async function loadReports() {
+            try {
+                // Fetch bookings
+                const bookingsQuery = query(collection(db, 'bookings'), orderBy('checkIn', 'desc'), limit(5));
+                const bookingsSnapshot = await getDocs(bookingsQuery);
+
+                // Update recent bookings table
+                const recentBookingsTable = document.getElementById('recentBookings');
+                recentBookingsTable.innerHTML = '';
+
+                bookingsSnapshot.forEach(doc => {
+                    const booking = doc.data();
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${booking.name}</td>
+                        <td>${booking.roomType}</td>
+                        <td>${new Date(booking.checkIn).toLocaleDateString()}</td>
+                        <td>${new Date(booking.checkOut).toLocaleDateString()}</td>
+                        <td>${booking.status}</td>
+                        <td>KSH ${booking.totalPrice.toLocaleString()}</td>
+                        <td>
+                            <button class="btn-action" onclick="viewBooking('${doc.id}')">View</button>
+                            <button class="btn-action" onclick="updateStatus('${doc.id}')">Update</button>
+                        </td>
+                    `;
+                    recentBookingsTable.appendChild(row);
+                });
+
+                // Update summary cards
+                document.getElementById('totalBookings').textContent = bookingsSnapshot.size;
+
+                // Calculate total revenue
+                const totalRevenue = bookingsSnapshot.docs.reduce((sum, doc) => sum + doc.data().totalPrice, 0);
+                document.getElementById('totalRevenue').textContent = `KSH ${totalRevenue.toLocaleString()}`;
+
+                // Calculate average stay duration
+                const totalDays = bookingsSnapshot.docs.reduce((sum, doc) => {
+                    const checkIn = new Date(doc.data().checkIn);
+                    const checkOut = new Date(doc.data().checkOut);
+                    return sum + (checkOut - checkIn) / (1000 * 60 * 60 * 24);
+                }, 0);
+                const averageStay = totalDays / bookingsSnapshot.size;
+                document.getElementById('averageStay').textContent = `${averageStay.toFixed(1)} days`;
+
+                // Calculate occupancy rate (assuming 50 total rooms)
+                const occupancyRate = (bookingsSnapshot.size / 50) * 100;
+                document.getElementById('occupancyRate').textContent = `${occupancyRate.toFixed(1)}%`;
+
+                // Update charts with sample data (replace with actual data)
+                bookingsChart.data.datasets[0].data = [65, 59, 80, 81, 56, 55];
+                roomsChart.data.datasets[0].data = [30, 25, 20, 25];
+                revenueChart.data.datasets[0].data = [65000, 59000, 80000, 81000, 56000, 55000];
+                satisfactionChart.data.datasets[0].data = [4.5, 4.2, 4.8, 4.3, 4.6];
+
+                bookingsChart.update();
+                roomsChart.update();
+                revenueChart.update();
+                satisfactionChart.update();
+
+            } catch (error) {
+                console.error('Error loading reports:', error);
+                alert('Error loading reports. Please try again later.');
+            }
+        }
+
+        // Date filter function
+        window.applyDateFilter = function () {
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+
+            if (!startDate || !endDate) {
+                alert('Please select both start and end dates');
+                return;
+            }
+
+            // Update reports based on date range
+            loadReports(startDate, endDate);
+        };
+
+        // Export to CSV function
+        window.exportToCSV = function (tableId) {
+            const table = document.getElementById(tableId);
+            let csv = [];
+            const rows = table.querySelectorAll('tr');
+
+            for (const row of rows) {
+                const cols = row.querySelectorAll('td,th');
+                const rowArray = Array.from(cols).map(col => col.textContent);
+                csv.push(rowArray.join(','));
+            }
+
+            const csvContent = csv.join('\n');
+            const blob = new Blob([csvContent], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'report.csv';
+            a.click();
+            window.URL.revokeObjectURL(url);
+        };
+
+        // Print table function
+        window.printTable = function (tableId) {
+            const printWindow = window.open('', '', 'width=800,height=600');
+            const table = document.getElementById(tableId).cloneNode(true);
+            printWindow.document.write(`
+                <html>
+                    <head>
+                        <title>Print Report</title>
+                        <style>
+                            table { width: 100%; border-collapse: collapse; }
+                            th, td { padding: 8px; border: 1px solid #ddd; }
+                        </style>
+                    </head>
+                    <body>
+                        <h2>Sunset Hotel Report</h2>
+                        ${table.outerHTML}
+                    </body>
+                </html>
+            `);
+            printWindow.document.close();
+            printWindow.focus();
+            printWindow.print();
+        };
+
+        // View booking function
+        window.viewBooking = function (bookingId) {
+            // Implement booking view functionality
+            alert('View booking: ' + bookingId);
+        };
+
+        // Update status function
+        window.updateStatus = function (bookingId) {
+            // Implement status update functionality
+            alert('Update status: ' + bookingId);
+        };
+
+        // Load reports when page loads
+        loadReports();
+    </script>
+</body>
+
+</html>
