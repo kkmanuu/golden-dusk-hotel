@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book a Room - Sunset Hotel | Luxury Coastal Resort</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Book your stay at Sunset Hotel. Choose from deluxe rooms, luxury suites, and family accommodations. Easy online booking with instant confirmation."
+    />
+    <meta
+      name="keywords"
+      content="hotel booking, room reservation, sunset hotel booking, luxury hotel rooms, coastal resort booking"
+    />
+    <meta name="author" content="Sunset Hotel" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta
+      property="og:title"
+      content="Book a Room - Sunset Hotel | Luxury Coastal Resort"
+    />
+    <meta
+      property="og:description"
+      content="Book your stay at Sunset Hotel. Choose from deluxe rooms, luxury suites, and family accommodations. Easy online booking with instant confirmation."
+    />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+    />
+    <meta property="og:url" content="http://127.0.0.1/booking.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Book a Room - Sunset Hotel | Luxury Coastal Resort"
+    />
+    <meta
+      name="twitter:description"
+      content="Book your stay at Sunset Hotel. Choose from deluxe rooms, luxury suites, and family accommodations. Easy online booking with instant confirmation."
+    />
+    <meta
+      name="twitter:image"
+      content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <!-- CSS and Font Links -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- Stripe.js -->
+    <script src="https://js.stripe.com/v3/"></script>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html" aria-label="Return to homepage">Home</a></li>
+        <li id="authLink">
+          <a
+            href="login.html"
+            class="login-btn"
+            aria-label="Login to your account"
+            >Login</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <div class="booking-container">
+      <h1>Book Your Stay</h1>
+
+      <!-- Booking Form -->
+      <form
+        id="bookingForm"
+        class="booking-form"
+        role="form"
+        aria-labelledby="booking-heading"
+      >
+        <h2 id="booking-heading">Room Booking</h2>
+
+        <!-- Personal Information -->
+        <div class="form-section">
+          <h3>Personal Information</h3>
+          <div class="input-box">
+            <label for="name" class="visually-hidden">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Full Name"
+              required
+              aria-required="true"
+            />
+          </div>
+          <div class="input-box">
+            <label for="email" class="visually-hidden">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              required
+              aria-required="true"
+            />
+          </div>
+          <div class="input-box">
+            <label for="phone" class="visually-hidden">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Phone Number"
+              required
+              aria-required="true"
+            />
+          </div>
+        </div>
+
+        <!-- Booking Details -->
+        <div class="form-section">
+          <h3>Booking Details</h3>
+          <div class="input-box">
+            <label for="roomType" class="visually-hidden">Room Type</label>
+            <select id="roomType" name="roomType" required aria-required="true">
+              <option value="">Select Room Type</option>
+              <option value="Deluxe Room">
+                Deluxe Room - KSH 25,000/night
+              </option>
+              <option value="Suite">Suite - KSH 35,000/night</option>
+              <option value="Family Room">
+                Family Room - KSH 30,000/night
+              </option>
+            </select>
+          </div>
+          <div class="input-box">
+            <label for="checkIn" class="visually-hidden">Check-in Date</label>
+            <input
+              type="date"
+              id="checkIn"
+              name="checkIn"
+              required
+              aria-required="true"
+            />
+          </div>
+          <div class="input-box">
+            <label for="checkOut" class="visually-hidden">Check-out Date</label>
+            <input
+              type="date"
+              id="checkOut"
+              name="checkOut"
+              required
+              aria-required="true"
+            />
+          </div>
+          <div class="input-box">
+            <label for="guests" class="visually-hidden">Number of Guests</label>
+            <input
+              type="number"
+              id="guests"
+              name="guests"
+              min="1"
+              max="4"
+              placeholder="Number of Guests"
+              required
+              aria-required="true"
+            />
+          </div>
+        </div>
+
+        <!-- Special Requests -->
+        <div class="form-section">
+          <h3>Special Requests</h3>
+          <div class="input-box">
+            <label for="specialRequests" class="visually-hidden"
+              >Special Requests</label
+            >
+            <textarea
+              id="specialRequests"
+              name="specialRequests"
+              placeholder="Any special requests or requirements?"
+              aria-required="false"
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- Payment Section -->
+        <div class="form-section">
+          <h3>Payment Information</h3>
+          <div class="price-summary">
+            <p>Total Price: <span id="totalPrice">KSH 0</span></p>
+          </div>
+          <div class="input-box">
+            <label for="card-element" class="visually-hidden"
+              >Credit Card</label
+            >
+            <div id="card-element" class="card-element"></div>
+            <div id="card-errors" class="error-message" role="alert"></div>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn" aria-label="Complete your booking">
+          <span id="submitBtnText">Book Now</span>
+          <div
+            id="submitSpinner"
+            class="spinner"
+            style="display: none"
+            aria-hidden="true"
+          >
+            <i class="fas fa-spinner fa-spin"></i>
+          </div>
+        </button>
+      </form>
+    </div>
+
+    <!-- Firebase Configuration -->
+    <script type="module">
+      import { firebaseConfig } from "./js/firebase-config.js";
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+      import {
+        getAuth,
+        onAuthStateChanged,
+        signOut,
+      } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+      import { saveBookingData } from "./js/database.js";
+      import { handlePayment } from "./js/payment.js";
+
+      console.log("Booking script started. Firebase config:", firebaseConfig);
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      // Initialize Stripe
+      let stripe, card;
+      try {
+        stripe = Stripe("YOUR_STRIPE_PUBLISHABLE_KEY"); // Replace with your Stripe publishable key
+        const elements = stripe.elements();
+        card = elements.create("card", {
+          style: {
+            base: {
+              fontSize: "16px",
+              color: "#424770",
+              "::placeholder": { color: "#aab7c4" },
+            },
+            invalid: { color: "#9e2146" },
+          },
+        });
+        card.mount("#card-element");
+        console.log("Stripe initialized and card mounted");
+      } catch (error) {
+        console.error("Stripe initialization error:", error);
+      }
+
+      // Handle card errors
+      card.addEventListener("change", (event) => {
+        const errorElement = document.getElementById("card-errors");
+        errorElement.textContent = event.error ? event.error.message : "";
+      });
+
+      // Check authentication state
+      onAuthStateChanged(auth, (user) => {
+        const authLink = document.getElementById("authLink");
+        if (!user) {
+          console.log("No user authenticated, redirecting to login");
+          window.location.href = "login.html";
+          return;
+        }
+        console.log("User authenticated:", user.uid);
+        // Update navigation for logged-in user
+        const userName = localStorage.getItem("userName") || "Guest";
+        authLink.innerHTML = `
+                <span>Welcome, ${userName}</span>
+                <a href="#" id="logoutBtn" aria-label="Logout from your account">Logout</a>
+            `;
+        // Logout functionality
+        document
+          .getElementById("logoutBtn")
+          .addEventListener("click", async (e) => {
+            e.preventDefault();
+            try {
+              await signOut(auth);
+              localStorage.removeItem("token");
+              localStorage.removeItem("userEmail");
+              localStorage.removeItem("userName");
+              window.location.href = "login.html";
+            } catch (error) {
+              console.error("Error signing out:", error);
+            }
+          });
+      });
+
+      // Initialize EmailJS
+      (function () {
+        try {
+          emailjs.init("YOUR_EMAILJS_USER_ID"); // Replace with your EmailJS User ID
+          console.log("EmailJS initialized");
+        } catch (error) {
+          console.error("EmailJS initialization error:", error);
+        }
+      })();
+
+      // Format currency to KSH
+      function formatCurrency(amount) {
+        return new Intl.NumberFormat("en-KE", {
+          style: "currency",
+          currency: "KES",
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0,
+        }).format(amount);
+      }
+
+      // Calculate total price
+      function calculateTotalPrice(roomType, checkIn, checkOut) {
+        const prices = {
+          "Deluxe Room": 25000,
+          Suite: 35000,
+          "Family Room": 30000,
+        };
+        const checkInDate = new Date(checkIn);
+        const checkOutDate = new Date(checkOut);
+        const nights = Math.ceil(
+          (checkOutDate - checkInDate) / (1000 * 60 * 60 * 24)
+        );
+        console.log(
+          `Calculating price: ${roomType} for ${nights} nights = KSH ${
+            prices[roomType] * nights
+          }`
+        );
+        return prices[roomType] * nights;
+      }
+
+      // Update total price
+      function updateTotalPrice() {
+        const roomType = document.getElementById("roomType").value;
+        const checkIn = document.getElementById("checkIn").value;
+        const checkOut = document.getElementById("checkOut").value;
+        if (roomType && checkIn && checkOut) {
+          const total = calculateTotalPrice(roomType, checkIn, checkOut);
+          document.getElementById("totalPrice").textContent =
+            formatCurrency(total);
+        }
+      }
+
+      // Add event listeners for price updates
+      document
+        .getElementById("roomType")
+        .addEventListener("change", updateTotalPrice);
+      document
+        .getElementById("checkIn")
+        .addEventListener("change", updateTotalPrice);
+      document
+        .getElementById("checkOut")
+        .addEventListener("change", updateTotalPrice);
+
+      // Set minimum date for check-in and check-out
+      const today = new Date().toISOString().split("T")[0];
+      document.getElementById("checkIn").min = today;
+      document.getElementById("checkOut").min = today;
+
+      // Update check-out minimum date when check-in changes
+      document
+        .getElementById("checkIn")
+        .addEventListener("change", function () {
+          document.getElementById("checkOut").min = this.value;
+        });
+
+      // Form submission
+      document
+        .getElementById("bookingForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          console.log("Booking form submitted");
+
+          const submitBtn = e.target.querySelector(".btn");
+          const submitBtnText = document.getElementById("submitBtnText");
+          const submitSpinner = document.getElementById("submitSpinner");
+
+          // Show loading state
+          submitBtn.disabled = true;
+          submitBtnText.style.display = "none";
+          submitSpinner.style.display = "inline-block";
+
+          try {
+            const formData = {
+              name: document.getElementById("name").value,
+              email: document.getElementById("email").value.toLowerCase(),
+              phone: document.getElementById("phone").value,
+              roomType: document.getElementById("roomType").value,
+              checkIn: document.getElementById("checkIn").value,
+              checkOut: document.getElementById("checkOut").value,
+              guests: document.getElementById("guests").value,
+              specialRequests: document.getElementById("specialRequests").value,
+              totalPrice: document.getElementById("totalPrice").textContent,
+              createdAt: new Date().toISOString(),
+            };
+            console.log("Form data collected:", formData);
+
+            // Send booking confirmation email via EmailJS
+            console.log("Attempting to send EmailJS email");
+            // Comment out EmailJS for testing if not configured
+            /*
+                await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+                    ...formData,
+                    to_email: formData.email
+                });
+                console.log('EmailJS email sent successfully');
+                */
+            console.log("EmailJS skipped for testing");
+
+            // Process payment
+            console.log("Attempting payment processing");
+            // Comment out payment for testing if backend is not set up
+            /*
+                const totalAmount = parseInt(formData.totalPrice.replace(/[^0-9]/g, '')); // Convert "KSH 75,000" to 75000
+                const paymentResult = await handlePayment(totalAmount, card);
+                */
+            const paymentResult = {
+              id: "test_payment_" + Date.now(),
+              status: "succeeded",
+            }; // Mock payment
+            console.log("Payment processed:", paymentResult);
+
+            // Save booking to Firebase Realtime Database
+            const user = auth.currentUser;
+            if (!user) {
+              console.error("No authenticated user");
+              throw new Error("User not authenticated");
+            }
+            console.log("Saving booking for user:", user.uid);
+            await saveBookingData(user.uid, {
+              ...formData,
+              paymentId: paymentResult.id,
+              paymentStatus: paymentResult.status,
+            });
+            console.log("Booking data save attempted");
+
+            alert("Booking confirmed! Check your database for the booking.");
+            window.location.href = "index.html";
+          } catch (error) {
+            console.error("Booking error:", error.message, error.stack);
+            alert(`Failed to process booking: ${error.message}`);
+          } finally {
+            // Reset button state
+            submitBtn.disabled = false;
+            submitBtnText.style.display = "inline-block";
+            submitSpinner.style.display = "none";
+          }
+        });
+    </script>
+
+    <!-- EmailJS SDK -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+
+    <!-- Structured Data for Booking Page -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Book a Room - Sunset Hotel",
+        "description": "Book your stay at Sunset Hotel. Choose from deluxe rooms, luxury suites, and family accommodations.",
+        "url": "http://127.0.0.1/booking.html",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "http://127.0.0.1"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Book a Room",
+              "item": "http://127.0.0.1/booking.html"
+            }
+          ]
+        },
+        "mainEntity": {
+          "@type": "Hotel",
+          "name": "Sunset Hotel",
+          "description": "Luxury coastal resort offering deluxe rooms, luxury suites, and family accommodations.",
+          "image": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Sunset Boulevard",
+            "addressLocality": "Coastal City"
+          },
+          "telephone": "0114015046",
+          "email": "sowdasheikh01@gmail.com",
+          "url": "http://127.0.0.1",
+          "priceRange": "$$$",
+          "amenityFeature": [
+            {
+              "@type": "LocationFeatureSpecification",
+              "name": "Swimming Pool"
+            },
+            {
+              "@type": "LocationFeatureSpecification",
+              "name": "Restaurant"
+            },
+            {
+              "@type": "LocationFeatureSpecification",
+              "name": "Spa"
+            }
+          ],
+          "numberOfRooms": "50",
+          "petsAllowed": "false",
+          "starRating": {
+            "@type": "Rating",
+            "ratingValue": "4.5"
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
