@@ -1,4 +1,4 @@
-# Sunset Hotel Website
+# golden-dusk-hotel
 
 A modern hotel booking website with real-time features, payment integration, and admin dashboard.
 
@@ -24,8 +24,8 @@ A modern hotel booking website with real-time features, payment integration, and
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/sunset-hotel.git
-cd sunset-hotel
+git clone https://github.com/yourusername/golden-dusk-hotel.git
+cd golden-dusk-hotel
 ```
 
 2. Install dependencies:
@@ -36,7 +36,7 @@ npm install
 3. Create a `.env` file in the root directory with the following variables:
 ```
 PORT=3000
-EMAIL_USER=your-sowdasheikh01@gmail.com
+EMAIL_USER=your-kipngenoemmanuel479@gmail.com
 EMAIL_PASS=your-app-specific-Toto123@
 STRIPE_SECRET_KEY=you-stripe-secret-key
 FIREBASE_API_KEY=your-firebase-api-key
