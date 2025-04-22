@@ -1,197 +1,366 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Feedback - Sunset Hotel | Share Your Experience</title>
-    
+
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Share your experience at Sunset Hotel. Your feedback helps us improve our services and maintain high standards of hospitality.">
-    <meta name="keywords" content="hotel feedback, hotel reviews, sunset hotel reviews, guest feedback">
-    <meta name="author" content="Sunset Hotel">
-    <meta name="robots" content="index, follow">
-    
+    <meta
+      name="description"
+      content="Share your experience at Sunset Hotel. Your feedback helps us improve our services and maintain high standards of hospitality."
+    />
+    <meta
+      name="keywords"
+      content="hotel feedback, hotel reviews, sunset hotel reviews, guest feedback"
+    />
+    <meta name="author" content="Sunset Hotel" />
+    <meta name="robots" content="index, follow" />
+
     <!-- CSS and Font Links -->
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
     <!-- Navigation -->
     <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <ul>
-            <li><a href="index.html" aria-label="Return to homepage">Home</a></li>
-            <li><a href="#" id="logoutBtn" aria-label="Logout from your account">Logout</a></li>
-        </ul>
+      <ul>
+        <li><a href="index.html" aria-label="Return to homepage">Home</a></li>
+        <li>
+          <a href="#" id="logoutBtn" aria-label="Logout from your account"
+            >Logout</a
+          >
+        </li>
+      </ul>
     </nav>
 
     <div class="feedback-container">
-        <h1>Share Your Experience</h1>
-        
-        <!-- Feedback Form -->
-        <form id="feedbackForm" class="feedback-form" role="form" aria-labelledby="feedback-heading">
-            <h2 id="feedback-heading">Your Feedback</h2>
-            
-            <!-- Rating Section -->
-            <div class="rating-section">
-                <label for="rating" class="rating-label">Overall Rating</label>
-                <div class="rating-stars">
-                    <input type="radio" id="star5" name="rating" value="5" aria-label="5 stars">
-                    <label for="star5"><i class="fas fa-star"></i></label>
-                    <input type="radio" id="star4" name="rating" value="4" aria-label="4 stars">
-                    <label for="star4"><i class="fas fa-star"></i></label>
-                    <input type="radio" id="star3" name="rating" value="3" aria-label="3 stars">
-                    <label for="star3"><i class="fas fa-star"></i></label>
-                    <input type="radio" id="star2" name="rating" value="2" aria-label="2 stars">
-                    <label for="star2"><i class="fas fa-star"></i></label>
-                    <input type="radio" id="star1" name="rating" value="1" aria-label="1 star">
-                    <label for="star1"><i class="fas fa-star"></i></label>
-                </div>
-            </div>
+      <h1>Share Your Experience</h1>
 
-            <!-- Category Ratings -->
-            <div class="category-ratings">
-                <div class="category-rating">
-                    <label for="cleanliness">Cleanliness</label>
-                    <div class="rating-stars">
-                        <input type="radio" id="clean5" name="cleanliness" value="5" aria-label="5 stars">
-                        <label for="clean5"><i class="fas fa-star"></i></label>
-                        <input type="radio" id="clean4" name="cleanliness" value="4" aria-label="4 stars">
-                        <label for="clean4"><i class="fas fa-star"></i></label>
-                        <input type="radio" id="clean3" name="cleanliness" value="3" aria-label="3 stars">
-                        <label for="clean3"><i class="fas fa-star"></i></label>
-                        <input type="radio" id="clean2" name="cleanliness" value="2" aria-label="2 stars">
-                        <label for="clean2"><i class="fas fa-star"></i></label>
-                        <input type="radio" id="clean1" name="cleanliness" value="1" aria-label="1 star">
-                        <label for="clean1"><i class="fas fa-star"></i></label>
-                    </div>
-                </div>
+      <!-- Feedback Form -->
+      <form
+        id="feedbackForm"
+        class="feedback-form"
+        role="form"
+        aria-labelledby="feedback-heading"
+      >
+        <h2 id="feedback-heading">Your Feedback</h2>
 
-                <div class="category-rating">
-                    <label for="service">Service</label>
-                    <div class="rating-stars">
-                        <input type="radio" id="service5" name="service" value="5" aria-label="5 stars">
-                        <label for="service5"><i class="fas fa-star"></i></label>
-                        <input type="radio" id="service4" name="service" value="4" aria-label="4 stars">
-                        <label for="service4"><i class="fas fa-star"></i></label>
-                        <input type="radio" id="service3" name="service" value="3" aria-label="3 stars">
-                        <label for="service3"><i class="fas fa-star"></i></label>
-                        <input type="radio" id="service2" name="service" value="2" aria-label="2 stars">
-                        <label for="service2"><i class="fas fa-star"></i></label>
-                        <input type="radio" id="service1" name="service" value="1" aria-label="1 star">
-                        <label for="service1"><i class="fas fa-star"></i></label>
-                    </div>
-                </div>
-
-                <div class="category-rating">
-                    <label for="value">Value for Money</label>
-                    <div class="rating-stars">
-                        <input type="radio" id="value5" name="value" value="5" aria-label="5 stars">
-                        <label for="value5"><i class="fas fa-star"></i></label>
-                        <input type="radio" id="value4" name="value" value="4" aria-label="4 stars">
-                        <label for="value4"><i class="fas fa-star"></i></label>
-                        <input type="radio" id="value3" name="value" value="3" aria-label="3 stars">
-                        <label for="value3"><i class="fas fa-star"></i></label>
-                        <input type="radio" id="value2" name="value" value="2" aria-label="2 stars">
-                        <label for="value2"><i class="fas fa-star"></i></label>
-                        <input type="radio" id="value1" name="value" value="1" aria-label="1 star">
-                        <label for="value1"><i class="fas fa-star"></i></label>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Feedback Text -->
-            <div class="input-box">
-                <label for="feedback" class="visually-hidden">Your Feedback</label>
-                <textarea id="feedback" placeholder="Tell us about your experience..." required aria-required="true"></textarea>
-            </div>
-
-            <!-- Submit Button -->
-            <button type="submit" class="btn" aria-label="Submit your feedback">
-                <span id="submitBtnText">Submit Feedback</span>
-                <div id="submitSpinner" class="spinner" style="display: none;" aria-hidden="true">
-                    <i class="fas fa-spinner fa-spin"></i>
-                </div>
-            </button>
-        </form>
-
-        <!-- Recent Reviews -->
-        <div class="recent-reviews">
-            <h2>Recent Reviews</h2>
-            <div id="reviewsList" class="reviews-list">
-                <!-- Reviews will be populated here -->
-            </div>
+        <!-- Rating Section -->
+        <div class="rating-section">
+          <label for="rating" class="rating-label">Overall Rating</label>
+          <div class="rating-stars">
+            <input
+              type="radio"
+              id="star5"
+              name="rating"
+              value="5"
+              aria-label="5 stars"
+            />
+            <label for="star5"><i class="fas fa-star"></i></label>
+            <input
+              type="radio"
+              id="star4"
+              name="rating"
+              value="4"
+              aria-label="4 stars"
+            />
+            <label for="star4"><i class="fas fa-star"></i></label>
+            <input
+              type="radio"
+              id="star3"
+              name="rating"
+              value="3"
+              aria-label="3 stars"
+            />
+            <label for="star3"><i class="fas fa-star"></i></label>
+            <input
+              type="radio"
+              id="star2"
+              name="rating"
+              value="2"
+              aria-label="2 stars"
+            />
+            <label for="star2"><i class="fas fa-star"></i></label>
+            <input
+              type="radio"
+              id="star1"
+              name="rating"
+              value="1"
+              aria-label="1 star"
+            />
+            <label for="star1"><i class="fas fa-star"></i></label>
+          </div>
         </div>
+
+        <!-- Category Ratings -->
+        <div class="category-ratings">
+          <div class="category-rating">
+            <label for="cleanliness">Cleanliness</label>
+            <div class="rating-stars">
+              <input
+                type="radio"
+                id="clean5"
+                name="cleanliness"
+                value="5"
+                aria-label="5 stars"
+              />
+              <label for="clean5"><i class="fas fa-star"></i></label>
+              <input
+                type="radio"
+                id="clean4"
+                name="cleanliness"
+                value="4"
+                aria-label="4 stars"
+              />
+              <label for="clean4"><i class="fas fa-star"></i></label>
+              <input
+                type="radio"
+                id="clean3"
+                name="cleanliness"
+                value="3"
+                aria-label="3 stars"
+              />
+              <label for="clean3"><i class="fas fa-star"></i></label>
+              <input
+                type="radio"
+                id="clean2"
+                name="cleanliness"
+                value="2"
+                aria-label="2 stars"
+              />
+              <label for="clean2"><i class="fas fa-star"></i></label>
+              <input
+                type="radio"
+                id="clean1"
+                name="cleanliness"
+                value="1"
+                aria-label="1 star"
+              />
+              <label for="clean1"><i class="fas fa-star"></i></label>
+            </div>
+          </div>
+
+          <div class="category-rating">
+            <label for="service">Service</label>
+            <div class="rating-stars">
+              <input
+                type="radio"
+                id="service5"
+                name="service"
+                value="5"
+                aria-label="5 stars"
+              />
+              <label for="service5"><i class="fas fa-star"></i></label>
+              <input
+                type="radio"
+                id="service4"
+                name="service"
+                value="4"
+                aria-label="4 stars"
+              />
+              <label for="service4"><i class="fas fa-star"></i></label>
+              <input
+                type="radio"
+                id="service3"
+                name="service"
+                value="3"
+                aria-label="3 stars"
+              />
+              <label for="service3"><i class="fas fa-star"></i></label>
+              <input
+                type="radio"
+                id="service2"
+                name="service"
+                value="2"
+                aria-label="2 stars"
+              />
+              <label for="service2"><i class="fas fa-star"></i></label>
+              <input
+                type="radio"
+                id="service1"
+                name="service"
+                value="1"
+                aria-label="1 star"
+              />
+              <label for="service1"><i class="fas fa-star"></i></label>
+            </div>
+          </div>
+
+          <div class="category-rating">
+            <label for="value">Value for Money</label>
+            <div class="rating-stars">
+              <input
+                type="radio"
+                id="value5"
+                name="value"
+                value="5"
+                aria-label="5 stars"
+              />
+              <label for="value5"><i class="fas fa-star"></i></label>
+              <input
+                type="radio"
+                id="value4"
+                name="value"
+                value="4"
+                aria-label="4 stars"
+              />
+              <label for="value4"><i class="fas fa-star"></i></label>
+              <input
+                type="radio"
+                id="value3"
+                name="value"
+                value="3"
+                aria-label="3 stars"
+              />
+              <label for="value3"><i class="fas fa-star"></i></label>
+              <input
+                type="radio"
+                id="value2"
+                name="value"
+                value="2"
+                aria-label="2 stars"
+              />
+              <label for="value2"><i class="fas fa-star"></i></label>
+              <input
+                type="radio"
+                id="value1"
+                name="value"
+                value="1"
+                aria-label="1 star"
+              />
+              <label for="value1"><i class="fas fa-star"></i></label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feedback Text -->
+        <div class="input-box">
+          <label for="feedback" class="visually-hidden">Your Feedback</label>
+          <textarea
+            id="feedback"
+            placeholder="Tell us about your experience..."
+            required
+            aria-required="true"
+          ></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn" aria-label="Submit your feedback">
+          <span id="submitBtnText">Submit Feedback</span>
+          <div
+            id="submitSpinner"
+            class="spinner"
+            style="display: none"
+            aria-hidden="true"
+          >
+            <i class="fas fa-spinner fa-spin"></i>
+          </div>
+        </button>
+      </form>
+
+      <!-- Recent Reviews -->
+      <div class="recent-reviews">
+        <h2>Recent Reviews</h2>
+        <div id="reviewsList" class="reviews-list">
+          <!-- Reviews will be populated here -->
+        </div>
+      </div>
     </div>
 
     <!-- Firebase Configuration -->
     <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
-        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
-        import { getFirestore, collection, addDoc, query, orderBy, limit, getDocs } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
-        
-        const firebaseConfig = {
-            apiKey: "AIzaSyDuetoY-aEmpJ3k534sCrrkYZohlnbdQp8",
-            authDomain: "sunset-hotel-3813d.firebaseapp.com",
-            projectId: "sunset-hotel-3813d",
-            storageBucket: "sunset-hotel-3813d.firebasestorage.app",
-            messagingSenderId: "747778179093",
-            appId: "1:747778179093:web:ccf977e650c2b0be298e1c"
-        };
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+      import {
+        getAuth,
+        onAuthStateChanged,
+        signOut,
+      } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+        query,
+        orderBy,
+        limit,
+        getDocs,
+      } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const db = getFirestore(app);
+      const firebaseConfig = {
+        apiKey: "AIzaSyDuetoY-aEmpJ3k534sCrrkYZohlnbdQp8",
+        authDomain: "sunset-hotel-3813d.firebaseapp.com",
+        projectId: "sunset-hotel-3813d",
+        storageBucket: "sunset-hotel-3813d.firebasestorage.app",
+        messagingSenderId: "747778179093",
+        appId: "1:747778179093:web:ccf977e650c2b0be298e1c",
+      };
 
-        // Check authentication state
-        onAuthStateChanged(auth, (user) => {
-            if (!user) {
-                window.location.href = 'login.html';
-                return;
-            }
-            loadRecentReviews();
-        });
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      const db = getFirestore(app);
 
-        // Logout functionality
-        document.getElementById('logoutBtn').addEventListener('click', async (e) => {
-            e.preventDefault();
-            try {
-                await signOut(auth);
-                window.location.href = 'login.html';
-            } catch (error) {
-                console.error('Error signing out:', error);
-            }
-        });
-
-        // Load recent reviews
-        async function loadRecentReviews() {
-            try {
-                const reviewsRef = collection(db, 'reviews');
-                const reviewsQuery = query(reviewsRef, orderBy('createdAt', 'desc'), limit(5));
-                const reviewsSnapshot = await getDocs(reviewsQuery);
-                
-                const reviewsList = document.getElementById('reviewsList');
-                reviewsList.innerHTML = '';
-
-                reviewsSnapshot.forEach(doc => {
-                    const review = doc.data();
-                    const reviewElement = createReviewElement(review);
-                    reviewsList.appendChild(reviewElement);
-                });
-            } catch (error) {
-                console.error('Error loading reviews:', error);
-            }
+      // Check authentication state
+      onAuthStateChanged(auth, (user) => {
+        if (!user) {
+          window.location.href = "login.html";
+          return;
         }
+        loadRecentReviews();
+      });
 
-        // Create review element
-        function createReviewElement(review) {
-            const div = document.createElement('div');
-            div.className = 'review-card';
-            
-            const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
-            const date = new Date(review.createdAt.toDate()).toLocaleDateString();
-            
-            div.innerHTML = `
+      // Logout functionality
+      document
+        .getElementById("logoutBtn")
+        .addEventListener("click", async (e) => {
+          e.preventDefault();
+          try {
+            await signOut(auth);
+            window.location.href = "login.html";
+          } catch (error) {
+            console.error("Error signing out:", error);
+          }
+        });
+
+      // Load recent reviews
+      async function loadRecentReviews() {
+        try {
+          const reviewsRef = collection(db, "reviews");
+          const reviewsQuery = query(
+            reviewsRef,
+            orderBy("createdAt", "desc"),
+            limit(5)
+          );
+          const reviewsSnapshot = await getDocs(reviewsQuery);
+
+          const reviewsList = document.getElementById("reviewsList");
+          reviewsList.innerHTML = "";
+
+          reviewsSnapshot.forEach((doc) => {
+            const review = doc.data();
+            const reviewElement = createReviewElement(review);
+            reviewsList.appendChild(reviewElement);
+          });
+        } catch (error) {
+          console.error("Error loading reviews:", error);
+        }
+      }
+
+      // Create review element
+      function createReviewElement(review) {
+        const div = document.createElement("div");
+        div.className = "review-card";
+
+        const stars = "★".repeat(review.rating) + "☆".repeat(5 - review.rating);
+        const date = new Date(review.createdAt.toDate()).toLocaleDateString();
+
+        div.innerHTML = `
                 <div class="review-header">
                     <div class="review-rating">${stars}</div>
                     <div class="review-date">${date}</div>
@@ -203,72 +372,77 @@
                     <span>Value: ${review.value}/5</span>
                 </div>
             `;
-            
-            return div;
-        }
 
-        // Handle form submission
-        document.getElementById('feedbackForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const submitBtn = e.target.querySelector('.btn');
-            const submitBtnText = document.getElementById('submitBtnText');
-            const submitSpinner = document.getElementById('submitSpinner');
-            
-            // Show loading state
-            submitBtn.disabled = true;
-            submitBtnText.style.display = 'none';
-            submitSpinner.style.display = 'inline-block';
+        return div;
+      }
 
-            try {
-                const user = auth.currentUser;
-                const formData = new FormData(e.target);
-                
-                const feedbackData = {
-                    name: user.displayName || 'Anonymous',
-                    email: user.email,
-                    rating: parseInt(formData.get('rating')),
-                    cleanliness: parseInt(formData.get('cleanliness')),
-                    service: parseInt(formData.get('service')),
-                    value: parseInt(formData.get('value')),
-                    feedback: formData.get('feedback')
-                };
+      // Handle form submission
+      document
+        .getElementById("feedbackForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
 
-                // Save feedback to database
-                await addDoc(collection(db, 'reviews'), {
-                    ...feedbackData,
-                    createdAt: new Date()
-                });
+          const submitBtn = e.target.querySelector(".btn");
+          const submitBtnText = document.getElementById("submitBtnText");
+          const submitSpinner = document.getElementById("submitSpinner");
 
-                // Send feedback notification email
-                const emailResponse = await fetch('http://localhost:3000/api/send-feedback-notification', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(feedbackData)
-                });
+          // Show loading state
+          submitBtn.disabled = true;
+          submitBtnText.style.display = "none";
+          submitSpinner.style.display = "inline-block";
 
-                if (!emailResponse.ok) {
-                    throw new Error('Failed to send feedback notification');
-                }
-                
-                // Reset form and reload reviews
-                e.target.reset();
-                loadRecentReviews();
-                
-                // Show success message
-                alert('Thank you for your feedback!');
-            } catch (error) {
-                console.error('Error submitting feedback:', error);
-                alert('Failed to submit feedback. Please try again.');
-            } finally {
-                // Reset button state
-                submitBtn.disabled = false;
-                submitBtnText.style.display = 'inline-block';
-                submitSpinner.style.display = 'none';
+          try {
+            const user = auth.currentUser;
+            const formData = new FormData(e.target);
+
+            const feedbackData = {
+              name: user.displayName || "Anonymous",
+              email: user.email,
+              rating: parseInt(formData.get("rating")),
+              cleanliness: parseInt(formData.get("cleanliness")),
+              service: parseInt(formData.get("service")),
+              value: parseInt(formData.get("value")),
+              feedback: formData.get("feedback"),
+            };
+
+            // Save feedback to database
+            await addDoc(collection(db, "reviews"), {
+              ...feedbackData,
+              createdAt: new Date(),
+            });
+
+            // Send feedback notification email
+            const emailResponse = await fetch(
+              "http://localhost:3000/api/send-feedback-notification",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(feedbackData),
+              }
+            );
+
+            if (!emailResponse.ok) {
+              throw new Error("Failed to send feedback notification");
             }
+
+            // Reset form and reload reviews
+            e.target.reset();
+            loadRecentReviews();
+
+            // Show success message
+            alert("Thank you for your feedback!");
+          } catch (error) {
+            console.error("Error submitting feedback:", error);
+            alert("Failed to submit feedback. Please try again.");
+          } finally {
+            // Reset button state
+            submitBtn.disabled = false;
+            submitBtnText.style.display = "inline-block";
+            submitSpinner.style.display = "none";
+          }
         });
     </script>
-</body>
-</html> 
+  </body>
+</html>
