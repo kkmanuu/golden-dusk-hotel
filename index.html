@@ -1,332 +1,464 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sunset Hotel - Luxury Coastal Resort & Accommodation</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Experience luxury and comfort at Sunset Hotel, a beautiful coastal resort offering deluxe rooms, luxury suites, and family accommodations. Book your stay today!">
-    <meta name="keywords" content="luxury hotel, coastal resort, beach hotel, family accommodation, sunset hotel, hotel booking, luxury suite, deluxe room">
-    <meta name="author" content="Sunset Hotel">
-    <meta name="robots" content="index, follow">
+    <meta
+      name="description"
+      content="Experience luxury and comfort at Sunset Hotel, a beautiful coastal resort offering deluxe rooms, luxury suites, and family accommodations. Book your stay today!"
+    />
+    <meta
+      name="keywords"
+      content="luxury hotel, coastal resort, beach hotel, family accommodation, sunset hotel, hotel booking, luxury suite, deluxe room"
+    />
+    <meta name="author" content="Sunset Hotel" />
+    <meta name="robots" content="index, follow" />
 
     <!-- Open Graph Meta Tags for Social Media -->
-    <meta property="og:title" content="Sunset Hotel - Luxury Coastal Resort">
-    <meta property="og:description" content="Experience luxury and comfort at Sunset Hotel, a beautiful coastal resort offering deluxe rooms, luxury suites, and family accommodations.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80">
-    <meta property="og:url" content="http://127.0.0.1">
-    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sunset Hotel - Luxury Coastal Resort" />
+    <meta
+      property="og:description"
+      content="Experience luxury and comfort at Sunset Hotel, a beautiful coastal resort offering deluxe rooms, luxury suites, and family accommodations."
+    />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+    />
+    <meta property="og:url" content="http://127.0.0.1" />
+    <meta property="og:type" content="website" />
 
     <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sunset Hotel - Luxury Coastal Resort">
-    <meta name="twitter:description" content="Experience luxury and comfort at Sunset Hotel, a beautiful coastal resort offering deluxe rooms, luxury suites, and family accommodations.">
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sunset Hotel - Luxury Coastal Resort" />
+    <meta
+      name="twitter:description"
+      content="Experience luxury and comfort at Sunset Hotel, a beautiful coastal resort offering deluxe rooms, luxury suites, and family accommodations."
+    />
+    <meta
+      name="twitter:image"
+      content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+    />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="favicon.png" />
 
     <!-- Existing CSS and Font Links -->
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
     <!-- Navigation -->
     <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <ul>
-            <li><a href="#home" aria-label="Go to home section">Home</a></li>
-            <li><a href="#rooms" aria-label="View our rooms">Rooms</a></li>
-            <li><a href="#vision" aria-label="View our vision">Vision</a></li>
-            <li><a href="#events" aria-label="View our events">Events</a></li>
-            <li><a href="#pool" aria-label="View our swimming pool">Pool</a></li>
-            <li><a href="#gym" aria-label="View our gym">Gym</a></li>
-            <li><a href="#amenities" aria-label="View our amenities">Amenities</a></li>
-            <li><a href="#contact" aria-label="Contact us">Contact</a></li>
-            <li id="authLink"><a href="login.html" class="login-btn" aria-label="Login to your account">Login</a></li>
-        </ul>
+      <ul>
+        <li><a href="#home" aria-label="Go to home section">Home</a></li>
+        <li><a href="#rooms" aria-label="View our rooms">Rooms</a></li>
+        <li><a href="#vision" aria-label="View our vision">Vision</a></li>
+        <li><a href="#events" aria-label="View our events">Events</a></li>
+        <li><a href="#pool" aria-label="View our swimming pool">Pool</a></li>
+        <li><a href="#gym" aria-label="View our gym">Gym</a></li>
+        <li>
+          <a href="#amenities" aria-label="View our amenities">Amenities</a>
+        </li>
+        <li><a href="#contact" aria-label="Contact us">Contact</a></li>
+        <li id="authLink">
+          <a
+            href="login.html"
+            class="login-btn"
+            aria-label="Login to your account"
+            >Login</a
+          >
+        </li>
+      </ul>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="home" role="banner">
-        <div class="hero-content">
-            <h1>Welcome to Sunset Hotel</h1>
-            <p id="welcomeMessage">Experience luxury and comfort in our beautiful coastal resort</p>
-            <a href="booking.html" class="btn" aria-label="Book your stay now">Book Now</a>
-        </div>
+      <div class="hero-content">
+        <h1>Welcome to Sunset Hotel</h1>
+        <p id="welcomeMessage">
+          Experience luxury and comfort in our beautiful coastal resort
+        </p>
+        <a href="booking.html" class="btn" aria-label="Book your stay now"
+          >Book Now</a
+        >
+      </div>
     </section>
 
     <!-- Rooms Section -->
     <section id="rooms" class="rooms-section" aria-labelledby="rooms-heading">
-        <div class="container">
-            <h2 id="rooms-heading">Our Rooms</h2>
-            <div class="rooms-grid">
-                <article class="room-card">
-                    <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Deluxe Room with ocean view" loading="lazy">
-                    <h3>Deluxe Room</h3>
-                    <p>Spacious room with ocean view</p>
-                    <a href="booking.html" class="btn" aria-label="Book Deluxe Room">Book Now</a>
-                </article>
-                <article class="room-card">
-                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Luxury Suite with private balcony" loading="lazy">
-                    <h3>Luxury Suite</h3>
-                    <p>Premium suite with private balcony</p>
-                    <a href="booking.html" class="btn" aria-label="Book Luxury Suite">Book Now</a>
-                </article>
-                <article class="room-card">
-                    <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Family Room perfect for family stays" loading="lazy">
-                    <h3>Family Room</h3>
-                    <p>Perfect for family stays</p>
-                    <a href="booking.html" class="btn" aria-label="Book Family Room">Book Now</a>
-                </article>
-            </div>
+      <div class="container">
+        <h2 id="rooms-heading">Our Rooms</h2>
+        <div class="rooms-grid">
+          <article class="room-card">
+            <img
+              src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+              alt="Deluxe Room with ocean view"
+              loading="lazy"
+            />
+            <h3>Deluxe Room</h3>
+            <p>Spacious room with ocean view</p>
+            <a href="booking.html" class="btn" aria-label="Book Deluxe Room"
+              >Book Now</a
+            >
+          </article>
+          <article class="room-card">
+            <img
+              src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+              alt="Luxury Suite with private balcony"
+              loading="lazy"
+            />
+            <h3>Luxury Suite</h3>
+            <p>Premium suite with private balcony</p>
+            <a href="booking.html" class="btn" aria-label="Book Luxury Suite"
+              >Book Now</a
+            >
+          </article>
+          <article class="room-card">
+            <img
+              src="https://images.unsplash.com/photo-1591088398332-8a7791972843?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+              alt="Family Room perfect for family stays"
+              loading="lazy"
+            />
+            <h3>Family Room</h3>
+            <p>Perfect for family stays</p>
+            <a href="booking.html" class="btn" aria-label="Book Family Room"
+              >Book Now</a
+            >
+          </article>
         </div>
+      </div>
     </section>
 
     <!-- Amenities Section -->
-    <section id="amenities" class="amenities-section" aria-labelledby="amenities-heading">
-        <div class="container">
-            <h2 id="amenities-heading">Our Amenities</h2>
-            <div class="amenities-grid">
-                <article class="amenity-card">
-                    <i class="fas fa-swimming-pool" aria-hidden="true"></i>
-                    <h3>Swimming Pool</h3>
-                    <p>Infinity pool overlooking the ocean</p>
-                </article>
-                <article class="amenity-card">
-                    <i class="fas fa-utensils" aria-hidden="true"></i>
-                    <h3>Restaurant</h3>
-                    <p>Fine dining with local cuisine</p>
-                </article>
-                <article class="amenity-card">
-                    <i class="fas fa-spa" aria-hidden="true"></i>
-                    <h3>Spa</h3>
-                    <p>Relaxing treatments and massages</p>
-                </article>
-            </div>
+    <section
+      id="amenities"
+      class="amenities-section"
+      aria-labelledby="amenities-heading"
+    >
+      <div class="container">
+        <h2 id="amenities-heading">Our Amenities</h2>
+        <div class="amenities-grid">
+          <article class="amenity-card">
+            <i class="fas fa-swimming-pool" aria-hidden="true"></i>
+            <h3>Swimming Pool</h3>
+            <p>Infinity pool overlooking the ocean</p>
+          </article>
+          <article class="amenity-card">
+            <i class="fas fa-utensils" aria-hidden="true"></i>
+            <h3>Restaurant</h3>
+            <p>Fine dining with local cuisine</p>
+          </article>
+          <article class="amenity-card">
+            <i class="fas fa-spa" aria-hidden="true"></i>
+            <h3>Spa</h3>
+            <p>Relaxing treatments and massages</p>
+          </article>
         </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section" aria-labelledby="contact-heading">
-        <div class="container">
-            <h2 id="contact-heading">Contact Us</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                    <p>123 Sunset Boulevard, Coastal City</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone" aria-hidden="true"></i>
-                    <p><a href="tel:0114015046">0114015046</a></p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope" aria-hidden="true"></i>
-                    <p><a href="mailto:sowdasheikh01@gmail.com">sowdasheikh01@gmail.com</a></p>
-                </div>
-            </div>
+    <section
+      id="contact"
+      class="contact-section"
+      aria-labelledby="contact-heading"
+    >
+      <div class="container">
+        <h2 id="contact-heading">Contact Us</h2>
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+            <p>123 Sunset Boulevard, Coastal City</p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone" aria-hidden="true"></i>
+            <p><a href="tel:0114015046">0114015046</a></p>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <p>
+              <a href="mailto:sowdasheikh01@gmail.com"
+                >sowdasheikh01@gmail.com</a
+              >
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Vision Section -->
-    <section id="vision" class="vision-section" aria-labelledby="vision-heading">
-        <div class="container">
-            <h2 id="vision-heading">Our Vision</h2>
-            <div class="vision-content">
-                <div class="vision-text">
-                    <p>At Sunset Hotel, we envision creating an unparalleled luxury experience where every guest feels the perfect blend of comfort, elegance, and authentic Kenyan hospitality. Our commitment to excellence and sustainable practices ensures we provide not just accommodation, but a memorable journey for all our guests.</p>
-                    <ul class="vision-points">
-                        <li><i class="fas fa-check-circle"></i> Exceptional Service</li>
-                        <li><i class="fas fa-check-circle"></i> Sustainable Practices</li>
-                        <li><i class="fas fa-check-circle"></i> Cultural Integration</li>
-                        <li><i class="fas fa-check-circle"></i> Environmental Responsibility</li>
-                    </ul>
-                </div>
-                <div class="vision-image">
-                    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Sunset Hotel Vision" loading="lazy">
-                </div>
-            </div>
+    <section
+      id="vision"
+      class="vision-section"
+      aria-labelledby="vision-heading"
+    >
+      <div class="container">
+        <h2 id="vision-heading">Our Vision</h2>
+        <div class="vision-content">
+          <div class="vision-text">
+            <p>
+              At Sunset Hotel, we envision creating an unparalleled luxury
+              experience where every guest feels the perfect blend of comfort,
+              elegance, and authentic Kenyan hospitality. Our commitment to
+              excellence and sustainable practices ensures we provide not just
+              accommodation, but a memorable journey for all our guests.
+            </p>
+            <ul class="vision-points">
+              <li><i class="fas fa-check-circle"></i> Exceptional Service</li>
+              <li><i class="fas fa-check-circle"></i> Sustainable Practices</li>
+              <li><i class="fas fa-check-circle"></i> Cultural Integration</li>
+              <li>
+                <i class="fas fa-check-circle"></i> Environmental Responsibility
+              </li>
+            </ul>
+          </div>
+          <div class="vision-image">
+            <img
+              src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+              alt="Sunset Hotel Vision"
+              loading="lazy"
+            />
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Events Section -->
-    <section id="events" class="events-section" aria-labelledby="events-heading">
-        <div class="container">
-            <h2 id="events-heading">Events & Celebrations</h2>
-            <div class="events-grid">
-                <article class="event-card">
-                    <img src="https://images.unsplash.com/photo-1511795409834-432f7d1f3b1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Wedding Venue" loading="lazy">
-                    <h3>Weddings</h3>
-                    <p>Create your perfect day with our stunning venues and professional event planning team.</p>
-                    <ul class="event-features">
-                        <li><i class="fas fa-check"></i> Indoor & Outdoor Venues</li>
-                        <li><i class="fas fa-check"></i> Catering Services</li>
-                        <li><i class="fas fa-check"></i> Event Coordination</li>
-                    </ul>
-                </article>
-                <article class="event-card">
-                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Conference Room" loading="lazy">
-                    <h3>Conferences</h3>
-                    <p>State-of-the-art facilities for your business meetings and conferences.</p>
-                    <ul class="event-features">
-                        <li><i class="fas fa-check"></i> Modern Equipment</li>
-                        <li><i class="fas fa-check"></i> High-Speed Internet</li>
-                        <li><i class="fas fa-check"></i> Catering Options</li>
-                    </ul>
-                </article>
-                <article class="event-card">
-                    <img src="https://images.unsplash.com/photo-1511795409834-432f7d1f3b1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Celebration Venue" loading="lazy">
-                    <h3>Celebrations</h3>
-                    <p>Perfect venues for birthdays, anniversaries, and special occasions.</p>
-                    <ul class="event-features">
-                        <li><i class="fas fa-check"></i> Custom Decorations</li>
-                        <li><i class="fas fa-check"></i> Entertainment Options</li>
-                        <li><i class="fas fa-check"></i> Special Menus</li>
-                    </ul>
-                </article>
-            </div>
+    <section
+      id="events"
+      class="events-section"
+      aria-labelledby="events-heading"
+    >
+      <div class="container">
+        <h2 id="events-heading">Events & Celebrations</h2>
+        <div class="events-grid">
+          <article class="event-card">
+            <img
+              src="https://images.unsplash.com/photo-1511795409834-432f7d1f3b1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+              alt="Wedding Venue"
+              loading="lazy"
+            />
+            <h3>Weddings</h3>
+            <p>
+              Create your perfect day with our stunning venues and professional
+              event planning team.
+            </p>
+            <ul class="event-features">
+              <li><i class="fas fa-check"></i> Indoor & Outdoor Venues</li>
+              <li><i class="fas fa-check"></i> Catering Services</li>
+              <li><i class="fas fa-check"></i> Event Coordination</li>
+            </ul>
+          </article>
+          <article class="event-card">
+            <img
+              src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+              alt="Conference Room"
+              loading="lazy"
+            />
+            <h3>Conferences</h3>
+            <p>
+              State-of-the-art facilities for your business meetings and
+              conferences.
+            </p>
+            <ul class="event-features">
+              <li><i class="fas fa-check"></i> Modern Equipment</li>
+              <li><i class="fas fa-check"></i> High-Speed Internet</li>
+              <li><i class="fas fa-check"></i> Catering Options</li>
+            </ul>
+          </article>
+          <article class="event-card">
+            <img
+              src="https://images.unsplash.com/photo-1511795409834-432f7d1f3b1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+              alt="Celebration Venue"
+              loading="lazy"
+            />
+            <h3>Celebrations</h3>
+            <p>
+              Perfect venues for birthdays, anniversaries, and special
+              occasions.
+            </p>
+            <ul class="event-features">
+              <li><i class="fas fa-check"></i> Custom Decorations</li>
+              <li><i class="fas fa-check"></i> Entertainment Options</li>
+              <li><i class="fas fa-check"></i> Special Menus</li>
+            </ul>
+          </article>
         </div>
+      </div>
     </section>
 
     <!-- Swimming Pool Section -->
     <section id="pool" class="pool-section" aria-labelledby="pool-heading">
-        <div class="container">
-            <h2 id="pool-heading">Swimming Pool</h2>
-            <div class="pool-content">
-                <div class="pool-image">
-                    <img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Infinity Pool" loading="lazy">
-                </div>
-                <div class="pool-details">
-                    <h3>Infinity Pool Experience</h3>
-                    <p>Enjoy our stunning infinity pool overlooking the ocean. Perfect for relaxation and recreation.</p>
-                    <ul class="pool-features">
-                        <li><i class="fas fa-swimming-pool"></i> Temperature Controlled</li>
-                        <li><i class="fas fa-umbrella-beach"></i> Poolside Cabanas</li>
-                        <li><i class="fas fa-glass-martini-alt"></i> Pool Bar Service</li>
-                        <li><i class="fas fa-clock"></i> Open Daily 6 AM - 10 PM</li>
-                    </ul>
-                    <div class="pool-services">
-                        <h4>Pool Services</h4>
-                        <ul>
-                            <li>Swimming Lessons</li>
-                            <li>Pool Parties</li>
-                            <li>Water Aerobics</li>
-                            <li>Private Pool Events</li>
-                        </ul>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 id="pool-heading">Swimming Pool</h2>
+        <div class="pool-content">
+          <div class="pool-image">
+            <img
+              src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+              alt="Infinity Pool"
+              loading="lazy"
+            />
+          </div>
+          <div class="pool-details">
+            <h3>Infinity Pool Experience</h3>
+            <p>
+              Enjoy our stunning infinity pool overlooking the ocean. Perfect
+              for relaxation and recreation.
+            </p>
+            <ul class="pool-features">
+              <li>
+                <i class="fas fa-swimming-pool"></i> Temperature Controlled
+              </li>
+              <li><i class="fas fa-umbrella-beach"></i> Poolside Cabanas</li>
+              <li><i class="fas fa-glass-martini-alt"></i> Pool Bar Service</li>
+              <li><i class="fas fa-clock"></i> Open Daily 6 AM - 10 PM</li>
+            </ul>
+            <div class="pool-services">
+              <h4>Pool Services</h4>
+              <ul>
+                <li>Swimming Lessons</li>
+                <li>Pool Parties</li>
+                <li>Water Aerobics</li>
+                <li>Private Pool Events</li>
+              </ul>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Gym & Fitness Section -->
     <section id="gym" class="gym-section" aria-labelledby="gym-heading">
-        <div class="container">
-            <h2 id="gym-heading">Gym & Fitness Center</h2>
-            <div class="gym-content">
-                <div class="gym-details">
-                    <h3>State-of-the-Art Fitness Center</h3>
-                    <p>Stay fit during your stay with our fully equipped gym and fitness programs.</p>
-                    <ul class="gym-features">
-                        <li><i class="fas fa-dumbbell"></i> Modern Equipment</li>
-                        <li><i class="fas fa-user-friends"></i> Personal Trainers</li>
-                        <li><i class="fas fa-clock"></i> 24/7 Access</li>
-                        <li><i class="fas fa-shower"></i> Changing Rooms</li>
-                    </ul>
-                    <div class="fitness-programs">
-                        <h4>Fitness Programs</h4>
-                        <ul>
-                            <li>Personal Training</li>
-                            <li>Group Classes</li>
-                            <li>Yoga Sessions</li>
-                            <li>Fitness Assessments</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="gym-image">
-                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Fitness Center" loading="lazy">
-                </div>
+      <div class="container">
+        <h2 id="gym-heading">Gym & Fitness Center</h2>
+        <div class="gym-content">
+          <div class="gym-details">
+            <h3>State-of-the-Art Fitness Center</h3>
+            <p>
+              Stay fit during your stay with our fully equipped gym and fitness
+              programs.
+            </p>
+            <ul class="gym-features">
+              <li><i class="fas fa-dumbbell"></i> Modern Equipment</li>
+              <li><i class="fas fa-user-friends"></i> Personal Trainers</li>
+              <li><i class="fas fa-clock"></i> 24/7 Access</li>
+              <li><i class="fas fa-shower"></i> Changing Rooms</li>
+            </ul>
+            <div class="fitness-programs">
+              <h4>Fitness Programs</h4>
+              <ul>
+                <li>Personal Training</li>
+                <li>Group Classes</li>
+                <li>Yoga Sessions</li>
+                <li>Fitness Assessments</li>
+              </ul>
             </div>
+          </div>
+          <div class="gym-image">
+            <img
+              src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+              alt="Fitness Center"
+              loading="lazy"
+            />
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer role="contentinfo">
-        <div class="container">
-            <p>© 2025 Sunset Hotel. All rights reserved.</p>
-        </div>
+      <div class="container">
+        <p>© 2025 Sunset Hotel. All rights reserved.</p>
+      </div>
     </footer>
 
     <!-- Firebase Configuration -->
     <script type="module">
-        import { firebaseConfig } from "./js/firebase-config.js";
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
-        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+      import { firebaseConfig } from "./js/firebase-config.js";
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+      import {
+        getAuth,
+        onAuthStateChanged,
+        signOut,
+      } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
 
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
 
-        // Check authentication state
-        onAuthStateChanged(auth, (user) => {
-            const authLink = document.getElementById('authLink');
-            const welcomeMessage = document.getElementById('welcomeMessage');
-            if (user) {
-                // User is logged in
-                const userName = localStorage.getItem('userName') || 'Guest';
-                authLink.innerHTML = `
+      // Check authentication state
+      onAuthStateChanged(auth, (user) => {
+        const authLink = document.getElementById("authLink");
+        const welcomeMessage = document.getElementById("welcomeMessage");
+        if (user) {
+          // User is logged in
+          const userName = localStorage.getItem("userName") || "Guest";
+          authLink.innerHTML = `
                     <span>Welcome, ${userName}</span>
                     <a href="#" id="logoutBtn" aria-label="Logout from your account">Logout</a>
                 `;
-                welcomeMessage.textContent = `Hello, ${userName}! Enjoy your stay at Sunset Hotel.`;
+          welcomeMessage.textContent = `Hello, ${userName}! Enjoy your stay at Sunset Hotel.`;
 
-                // Logout functionality
-                document.getElementById('logoutBtn').addEventListener('click', async (e) => {
-                    e.preventDefault();
-                    try {
-                        await signOut(auth);
-                        localStorage.removeItem('token');
-                        localStorage.removeItem('userEmail');
-                        localStorage.removeItem('userName');
-                        window.location.href = 'login.html';
-                    } catch (error) {
-                        console.error('Error signing out:', error);
-                    }
-                });
-            } else {
-                // User is not logged in
-                authLink.innerHTML = '<a href="login.html" class="login-btn" aria-label="Login to your account">Login</a>';
-                welcomeMessage.textContent = 'Experience luxury and comfort in our beautiful coastal resort';
-            }
-        });
+          // Logout functionality
+          document
+            .getElementById("logoutBtn")
+            .addEventListener("click", async (e) => {
+              e.preventDefault();
+              try {
+                await signOut(auth);
+                localStorage.removeItem("token");
+                localStorage.removeItem("userEmail");
+                localStorage.removeItem("userName");
+                window.location.href = "login.html";
+              } catch (error) {
+                console.error("Error signing out:", error);
+              }
+            });
+        } else {
+          // User is not logged in
+          authLink.innerHTML =
+            '<a href="login.html" class="login-btn" aria-label="Login to your account">Login</a>';
+          welcomeMessage.textContent =
+            "Experience luxury and comfort in our beautiful coastal resort";
+        }
+      });
     </script>
 
     <!-- Structured Data for Hotel -->
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "Hotel",
         "name": "Sunset Hotel",
         "description": "Luxury coastal resort offering deluxe rooms, luxury suites, and family accommodations.",
         "image": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
         "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "123 Sunset hotel mombasa",
-            "addressLocality": "Coastal City"
+          "@type": "PostalAddress",
+          "streetAddress": "123 Sunset hotel mombasa",
+          "addressLocality": "Coastal City"
         },
         "telephone": "0114015046",
         "email": "sowdasheikh01@gmail.com",
         "url": "http://127.0.0.1",
         "priceRange": "KSH20,000-50,000",
         "amenityFeature": [
-            { "@type": "LocationFeatureSpecification", "name": "Swimming Pool" },
-            { "@type": "LocationFeatureSpecification", "name": "Restaurant" },
-            { "@type": "LocationFeatureSpecification", "name": "Spa" }
+          { "@type": "LocationFeatureSpecification", "name": "Swimming Pool" },
+          { "@type": "LocationFeatureSpecification", "name": "Restaurant" },
+          { "@type": "LocationFeatureSpecification", "name": "Spa" }
         ],
         "numberOfRooms": "50",
         "petsAllowed": "false",
         "starRating": { "@type": "Rating", "ratingValue": "4.5" }
-    }
+      }
     </script>
-</body>
+  </body>
 </html>
