@@ -1,298 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - Sunset Hotel | Luxury Coastal Resort</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Log in to your Sunset Hotel account to book your luxury stay. Access exclusive offers and manage your reservations." />
-    <meta name="keywords" content="hotel login, sunset hotel sign in, luxury hotel account, coastal resort login" />
+    <meta
+      name="description"
+      content="Log in to your Sunset Hotel account to book your luxury stay. Access exclusive offers and manage your reservations."
+    />
+    <meta
+      name="keywords"
+      content="hotel login, sunset hotel sign in, luxury hotel account, coastal resort login"
+    />
     <meta name="author" content="Sunset Hotel" />
     <meta name="robots" content="index, follow" />
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Login - Sunset Hotel | Luxury Coastal Resort" />
-    <meta property="og:description" content="Log in to your Sunset Hotel account to book your luxury stay. Access exclusive offers and manage your reservations." />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" />
+    <meta
+      property="og:title"
+      content="Login - Sunset Hotel | Luxury Coastal Resort"
+    />
+    <meta
+      property="og:description"
+      content="Log in to your Sunset Hotel account to book your luxury stay. Access exclusive offers and manage your reservations."
+    />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+    />
     <meta property="og:url" content="http://127.0.0.1/login.html" />
     <meta property="og:type" content="website" />
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Login - Sunset Hotel | Luxury Coastal Resort" />
-    <meta name="twitter:description" content="Log in to your Sunset Hotel account to book your luxury stay. Access exclusive offers and manage your reservations." />
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" />
+    <meta
+      name="twitter:title"
+      content="Login - Sunset Hotel | Luxury Coastal Resort"
+    />
+    <meta
+      name="twitter:description"
+      content="Log in to your Sunset Hotel account to book your luxury stay. Access exclusive offers and manage your reservations."
+    />
+    <meta
+      name="twitter:image"
+      content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+    />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png" />
 
     <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Inline CSS for Login Page -->
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
 
-        body {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            overflow-x: hidden;
-        }
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+        overflow-x: hidden;
+      }
 
+      .login-container {
+        display: flex;
+        max-width: 900px;
+        width: 90%;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      .login-image {
+        flex: 1;
+        background: url("https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")
+          no-repeat center;
+        background-size: cover;
+        min-height: 500px;
+      }
+
+      .login-form {
+        flex: 1;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .login-form h1 {
+        font-size: 2rem;
+        color: #1e3c72;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .input-box {
+        position: relative;
+        margin-bottom: 25px;
+      }
+
+      .input-box input {
+        width: 100%;
+        padding: 12px 15px;
+        font-size: 1rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        outline: none;
+        transition: border-color 0.3s, box-shadow 0.3s;
+        background: #f9f9f9;
+      }
+
+      .input-box input:focus {
+        border-color: #2a5298;
+        box-shadow: 0 0 8px rgba(42, 82, 152, 0.2);
+      }
+
+      .input-box label {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        font-size: 1rem;
+        color: #666;
+        pointer-events: none;
+        transition: all 0.3s ease;
+      }
+
+      .input-box input:focus ~ label,
+      .input-box input:not(:placeholder-shown) ~ label {
+        top: -10px;
+        left: 10px;
+        font-size: 0.8rem;
+        color: #2a5298;
+        background: #fff;
+        padding: 0 5px;
+      }
+
+      .error-message {
+        color: #e74c3c;
+        font-size: 0.9rem;
+        margin-top: 5px;
+        display: none;
+      }
+
+      .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 12px;
+        font-size: 1.1rem;
+        color: #fff;
+        background: linear-gradient(90deg, #2a5298, #1e3c72);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+      }
+
+      .btn:hover {
+        background: linear-gradient(90deg, #1e3c72, #2a5298);
+        transform: translateY(-2px);
+      }
+
+      .btn:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+      }
+
+      .spinner {
+        margin-left: 10px;
+      }
+
+      .register-link {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 0.95rem;
+        color: #666;
+      }
+
+      .register-link a {
+        color: #2a5298;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .register-link a:hover {
+        text-decoration: underline;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 768px) {
         .login-container {
-            display: flex;
-            max-width: 900px;
-            width: 90%;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            animation: fadeIn 1s ease-in-out;
+          flex-direction: column;
         }
 
         .login-image {
-            flex: 1;
-            background: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center;
-            background-size: cover;
-            min-height: 500px;
+          min-height: 200px;
         }
 
         .login-form {
-            flex: 1;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+          padding: 20px;
         }
 
         .login-form h1 {
-            font-size: 2rem;
-            color: #1e3c72;
-            margin-bottom: 20px;
-            text-align: center;
+          font-size: 1.5rem;
         }
-
-        .input-box {
-            position: relative;
-            margin-bottom: 25px;
-        }
-
-        .input-box input {
-            width: 100%;
-            padding: 12px 15px;
-            font-size: 1rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            outline: none;
-            transition: border-color 0.3s, box-shadow 0.3s;
-            background: #f9f9f9;
-        }
-
-        .input-box input:focus {
-            border-color: #2a5298;
-            box-shadow: 0 0 8px rgba(42, 82, 152, 0.2);
-        }
-
-        .input-box label {
-            position: absolute;
-            top: 50%;
-            left: 15px;
-            transform: translateY(-50%);
-            font-size: 1rem;
-            color: #666;
-            pointer-events: none;
-            transition: all 0.3s ease;
-        }
-
-        .input-box input:focus ~ label,
-        .input-box input:not(:placeholder-shown) ~ label {
-            top: -10px;
-            left: 10px;
-            font-size: 0.8rem;
-            color: #2a5298;
-            background: #fff;
-            padding: 0 5px;
-        }
-
-        .error-message {
-            color: #e74c3c;
-            font-size: 0.9rem;
-            margin-top: 5px;
-            display: none;
-        }
-
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 12px;
-            font-size: 1.1rem;
-            color: #fff;
-            background: linear-gradient(90deg, #2a5298, #1e3c72);
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.2s;
-        }
-
-        .btn:hover {
-            background: linear-gradient(90deg, #1e3c72, #2a5298);
-            transform: translateY(-2px);
-        }
-
-        .btn:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-        }
-
-        .spinner {
-            margin-left: 10px;
-        }
-
-        .register-link {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 0.95rem;
-            color: #666;
-        }
-
-        .register-link a {
-            color: #2a5298;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .register-link a:hover {
-            text-decoration: underline;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 768px) {
-            .login-container {
-                flex-direction: column;
-            }
-
-            .login-image {
-                min-height: 200px;
-            }
-
-            .login-form {
-                padding: 20px;
-            }
-
-            .login-form h1 {
-                font-size: 1.5rem;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="login-container">
-        <!-- Image Section -->
-        <div class="login-image" role="img" aria-label="Luxury hotel room with ocean view"></div>
+      <!-- Image Section -->
+      <div
+        class="login-image"
+        role="img"
+        aria-label="Luxury hotel room with ocean view"
+      ></div>
 
-        <!-- Login Form -->
-        <div class="login-form">
-            <h1>Welcome Back</h1>
-            <form id="loginForm" role="form" aria-labelledby="login-heading">
-                <div class="input-box">
-                    <input type="email" id="email" name="email" placeholder=" " required aria-required="true" />
-                    <label for="email">Email Address</label>
-                </div>
-                <div class="input-box">
-                    <input type="password" id="password" name="password" placeholder=" " required aria-required="true" minlength="6" />
-                    <label for="password">Password</label>
-                </div>
-                <div id="errorMessage" class="error-message"></div>
-                <button type="submit" class="btn" aria-label="Log in to your account">
-                    <span id="submitBtnText">Login</span>
-                    <div id="submitSpinner" class="spinner" style="display: none" aria-hidden="true">
-                        <i class="fas fa-spinner fa-spin"></i>
-                    </div>
-                </button>
-            </form>
-            <div class="register-link">
-                Don't have an account? <a href="register.html">Sign up here</a>
+      <!-- Login Form -->
+      <div class="login-form">
+        <h1>Welcome Back</h1>
+        <form id="loginForm" role="form" aria-labelledby="login-heading">
+          <div class="input-box">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder=" "
+              required
+              aria-required="true"
+            />
+            <label for="email">Email Address</label>
+          </div>
+          <div class="input-box">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder=" "
+              required
+              aria-required="true"
+              minlength="6"
+            />
+            <label for="password">Password</label>
+          </div>
+          <div id="errorMessage" class="error-message"></div>
+          <button type="submit" class="btn" aria-label="Log in to your account">
+            <span id="submitBtnText">Login</span>
+            <div
+              id="submitSpinner"
+              class="spinner"
+              style="display: none"
+              aria-hidden="true"
+            >
+              <i class="fas fa-spinner fa-spin"></i>
             </div>
+          </button>
+        </form>
+        <div class="register-link">
+          Don't have an account? <a href="register.html">Sign up here</a>
         </div>
+      </div>
     </div>
 
     <!-- Firebase Configuration -->
     <script type="module">
-        import { firebaseConfig } from "./js/firebase-config.js";
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
-        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
-        import { getUserData } from "./js/database.js";
+      import { firebaseConfig } from "./js/firebase-config.js";
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+      import {
+        getAuth,
+        signInWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+      import { getUserData } from "./js/database.js";
 
-        console.log('Login script started. Firebase config:', firebaseConfig);
+      console.log("Login script started. Firebase config:", firebaseConfig);
 
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
 
-        // Handle form submission
-        document.getElementById('loginForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            console.log('Login form submitted');
+      // Handle form submission
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          console.log("Login form submitted");
 
-            const submitBtn = e.target.querySelector('.btn');
-            const submitBtnText = document.getElementById('submitBtnText');
-            const submitSpinner = document.getElementById('submitSpinner');
-            const errorMessage = document.getElementById('errorMessage');
+          const submitBtn = e.target.querySelector(".btn");
+          const submitBtnText = document.getElementById("submitBtnText");
+          const submitSpinner = document.getElementById("submitSpinner");
+          const errorMessage = document.getElementById("errorMessage");
 
-            // Show loading state
-            submitBtn.disabled = true;
-            submitBtnText.style.display = 'none';
-            submitSpinner.style.display = 'inline-block';
-            errorMessage.style.display = 'none';
+          // Show loading state
+          submitBtn.disabled = true;
+          submitBtnText.style.display = "none";
+          submitSpinner.style.display = "inline-block";
+          errorMessage.style.display = "none";
 
-            try {
-                const email = document.getElementById('email').value.trim().toLowerCase();
-                const password = document.getElementById('password').value;
+          try {
+            const email = document
+              .getElementById("email")
+              .value.trim()
+              .toLowerCase();
+            const password = document.getElementById("password").value;
 
-                console.log('Signing in with email:', email);
-                const userCredential = await signInWithEmailAndPassword(auth, email, password);
-                const user = userCredential.user;
-                console.log('User signed in:', user.uid);
+            console.log("Signing in with email:", email);
+            const userCredential = await signInWithEmailAndPassword(
+              auth,
+              email,
+              password
+            );
+            const user = userCredential.user;
+            console.log("User signed in:", user.uid);
 
-                // Fetch user data from Realtime Database
-                const userData = await getUserData(user.uid);
-                console.log('User data fetched:', userData);
+            // Fetch user data from Realtime Database
+            const userData = await getUserData(user.uid);
+            console.log("User data fetched:", userData);
 
-                // Store user info in localStorage
-                localStorage.setItem('token', user.accessToken);
-                localStorage.setItem('userEmail', email);
-                localStorage.setItem('userName', userData.name || 'Guest');
+            // Store user info in localStorage
+            localStorage.setItem("token", user.accessToken);
+            localStorage.setItem("userEmail", email);
+            localStorage.setItem("userName", userData.name || "Guest");
 
-                alert('Login successful! Welcome back to Sunset Hotel.');
-                window.location.href = 'index.html';
-            } catch (error) {
-                console.error('Login error:', error.message, error.stack);
-                errorMessage.textContent = error.message;
-                errorMessage.style.display = 'block';
-            } finally {
-                // Reset button state
-                submitBtn.disabled = false;
-                submitBtnText.style.display = 'inline-block';
-                submitSpinner.style.display = 'none';
-            }
+            alert("Login successful! Welcome back to Sunset Hotel.");
+            window.location.href = "index.html";
+          } catch (error) {
+            console.error("Login error:", error.message, error.stack);
+            errorMessage.textContent = error.message;
+            errorMessage.style.display = "block";
+          } finally {
+            // Reset button state
+            submitBtn.disabled = false;
+            submitBtnText.style.display = "inline-block";
+            submitSpinner.style.display = "none";
+          }
         });
     </script>
-</body>
+  </body>
 </html>
