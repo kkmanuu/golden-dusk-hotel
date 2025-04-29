@@ -6,7 +6,7 @@ A modern hotel booking website with real-time features, payment integration, and
 
 - User authentication
 - Room booking system
-- Payment integration with Stripe
+- Payment integration with Stripe 
 - Email notifications
 - Admin dashboard with reports
 - Responsive design
